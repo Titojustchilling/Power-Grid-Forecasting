@@ -1,19 +1,3 @@
-# Grid Intelligence — Real PJM + NOAA Load Forecasting V6.1
-
-This version replaces V6's synthetic load/weather generator with a reproducible real-data pipeline:
-
-**PJM metered hourly demand + NOAA GHCNh hourly observations → leakage-safe ML load forecast → IEEE-14-bus power-flow scenario.**
-
-## What is real?
-
-- **Electricity demand:** PJM Data Miner `hrl_load_metered`.
-- **Weather:** NOAA/NCEI Global Historical Climatology Network hourly (GHCNh) station files.
-- **Grid model:** IEEE 14-bus benchmark supplied by pandapower (not a real PJM network model).
-
-PJM documents `hrl_load_metered` fields such as UTC/EPT timestamps, load area, MW, and company verification status. PJM's current API guide says API queries require a subscription key, date ranges cannot exceed 366 days, and a single query is limited to 50,000 rows. The downloader therefore requests one year at a time and paginates. Do not commit your PJM API key or raw PJM data to a public repository. See the PJM Data Miner terms for redistribution restrictions.
-
-NOAA's current GHCNh product replaces the legacy Integrated Surface Dataset and provides hourly weather observations. This project downloads period-of-record station files and filters them locally to the requested years.
-
 ## Setup
 
 ```bash
@@ -89,11 +73,6 @@ results/next_24h_forecast.csv
 results/grid_forecast_scenario.csv
 ```
 
-## Recruiter-facing bullets after running the project
-
-- Developed a Python machine-learning pipeline using multi-year PJM metered hourly electricity demand and NOAA GHCNh weather observations to forecast system load with leakage-safe temporal, weather, and calendar features.
-- Benchmarked gradient-boosting forecasts against a seasonal-naive baseline using chronological backtesting and MAE, RMSE, MAPE, and R² metrics.
-- Integrated forecasted demand scenarios with an IEEE-14-bus AC power-flow model to quantify forecast-driven changes in bus voltage, transmission loading, and active-power losses.
 
 ## Sources
 
