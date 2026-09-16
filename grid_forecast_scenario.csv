@@ -1,0 +1,2 @@
+forecast_mean_load_mw,ieee14_base_load_mw,load_change_pct,ieee14_load_scale_factor,min_bus_voltage_pu,max_line_loading_pct,active_power_losses_mw
+93790.29442941265,259.0,-0.747734888526097,0.992522651114739,1.01,1.4927462105563116,13.166197112060136
