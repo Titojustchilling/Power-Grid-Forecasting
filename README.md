@@ -49,11 +49,10 @@ PJM's API guide says a free API key can be obtained through its API portal. The 
 
 ## Important forecasting caveat
 
-The included 24-hour recursive forecast holds the latest observed weather constant. That is deliberate for a reproducible demonstration, but it is **not** a real operational weather forecast. A stronger portfolio version should feed an actual NOAA/NWS numerical weather prediction forecast into the load model for the future horizon.
-
+The included 24-hour recursive forecast holds the latest observed weather constant. That is deliberate for a reproducible demonstration, but it is not a real operational weather forecast. 
 ## Important grid-model caveat
 
-PJM public data does not provide nodal load at individual locations; PJM states that nodal load is confidential. Therefore this project does **not** claim to reconstruct the PJM transmission network. The IEEE-14-bus step is a benchmark scenario demonstrating how a forecasted system-demand trajectory can be coupled to a power-flow model.
+PJM public data does not provide nodal load at individual locations; PJM states that nodal load is confidential. Therefore this project does nog claim to reconstruct the PJM transmission network. The IEEE-14-bus step is a benchmark scenario demonstrating how a forecasted system-demand trajectory can be coupled to a power-flow model.
 
 ## Output
 
